@@ -16,7 +16,20 @@ let mainWindow = null;
 const randomNames = initializeRandomProcessNames();
 
 function createMainWindow() {
-    mainWindow = createWindow(sendToRenderer, geminiSessionRef, randomNames);
+    mainWindow = new BrowserWindow({
+        width: 1200,
+        height: 800,
+        webPreferences: {
+            preload: require('path').join(__dirname, 'preload.js'),
+            contextIsolation: true,
+            nodeIntegration: false
+        }
+    });
+    if (process.env.NODE_ENV === 'development') {
+        mainWindow.loadURL('http://localhost:5173');
+    } else {
+        mainWindow.loadFile(require('path').join(__dirname, '../dist/index.html'));
+    }
     return mainWindow;
 }
 

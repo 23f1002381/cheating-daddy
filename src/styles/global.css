@@ -1,0 +1,100 @@
+/* Global styles for Cheating Daddy React migration */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: rgba(24,31,47,0.95);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-view {
+  background: rgba(30,34,40,0.88);
+  border-radius: 18px;
+  box-shadow: 0 8px 48px 0 rgba(0,0,0,0.55);
+  padding: 56px 44px 44px 44px;
+  min-width: 420px;
+  max-width: 98vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.main-view h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 0px;
+  letter-spacing: 0.01em;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.14);
+}
+.main-view .subtitle {
+  font-size: 1.18rem;
+  font-weight: 400;
+  color: #b7c0d1;
+  margin-bottom: 12px;
+  margin-top: 2px;
+  text-align: center;
+}
+.main-view label {
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 8px;
+}
+.main-view input[type="password"] {
+  width: 100%;
+  padding: 18px;
+  border-radius: 11px;
+  border: 1px solid #22293a;
+  background: #23272f;
+  color: #fff;
+  font-size: 1.18rem;
+  margin-bottom: 14px;
+  margin-top: 4px;
+}
+.main-view button {
+  background: linear-gradient(90deg,#4f8cff 60%,#6ad1ff 100%);
+  color: #fff;
+  font-size: 1.26rem;
+  font-weight: 800;
+  border: none;
+  border-radius: 11px;
+  padding: 16px 50px;
+  margin-top: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(79,140,255,0.12);
+  transition: background 0.15s, box-shadow 0.15s;
+}
+.main-view button:disabled {
+  background: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.main-view .get-api-link {
+  color: #4f8cff;
+  text-decoration: underline;
+  font-size: 1.06rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.main-view .get-api-link:hover {
+  color: #6ad1ff;
+  text-decoration: underline;
+}
+/* Stealth: Hide app from screenshots/recorders (best effort) */
+@media (display-mode: browser) {
+  body, #root {
+    opacity: 0.01 !important;
+    pointer-events: none !important;
+  }
+}

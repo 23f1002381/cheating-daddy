@@ -1,0 +1,179 @@
+/* Help View Styles */
+.help-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+  overflow-y: auto;
+  color: var(--text-primary, #333);
+  background-color: var(--bg-primary, #fff);
+  line-height: 1.6;
+}
+
+.help-content {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Section Styling */
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: var(--text-primary, #333);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color, #e9ecef);
+}
+
+/* Keybinds Table */
+.keybinds-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background-color: var(--card-bg, #fff);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.keybinds-table th,
+.keybinds-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color, #e9ecef);
+}
+
+.keybinds-table th {
+  background-color: var(--section-header-bg, #f8f9fa);
+  font-weight: 600;
+  color: var(--text-primary, #333);
+}
+
+.keybinds-table tr:last-child td {
+  border-bottom: none;
+}
+
+.keybinds-table tr:hover {
+  background-color: var(--hover-bg, rgba(0, 0, 0, 0.02));
+}
+
+/* Key Styling */
+.key {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  margin: 0.125rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: var(--key-text, #333);
+  background-color: var(--key-bg, #f1f3f5);
+  border: 1px solid var(--key-border, #dee2e6);
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Links */
+.link {
+  color: var(--primary-color, #0078d4);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--primary-dark, #005a9e);
+  text-decoration: underline;
+}
+
+/* FAQ Section */
+.faq-item {
+  margin-bottom: 1.5rem;
+  background-color: var(--card-bg, #fff);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+  padding: 1rem 1.5rem;
+  margin: 0;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--section-header-bg, #f8f9fa);
+  transition: background-color 0.2s;
+}
+
+.faq-question:hover {
+  background-color: var(--hover-bg, rgba(0, 0, 0, 0.05));
+}
+
+.faq-answer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color, #e9ecef);
+}
+
+.faq-answer p {
+  margin: 0 0 1rem 0;
+}
+
+.faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .help-view {
+    padding: 1rem;
+  }
+  
+  .keybinds-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .keybinds-table th,
+  .keybinds-table td {
+    padding: 0.5rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .help-view {
+    --bg-primary: #1e1e1e;
+    --text-primary: #f0f0f0;
+    --card-bg: #2d2d2d;
+    --section-header-bg: #252526;
+    --border-color: #404040;
+    --hover-bg: rgba(255, 255, 255, 0.05);
+    --key-bg: #3c3c3c;
+    --key-border: #555;
+    --key-text: #f0f0f0;
+  }
+  
+  .key {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  }
+  
+  .keybinds-table th {
+    background-color: var(--section-header-bg);
+    color: var(--text-primary);
+  }
+  
+  .faq-question {
+    background-color: var(--section-header-bg);
+  }
+}
